@@ -15,15 +15,18 @@ interface Person {
   post: string;
   image: string;
 }
-
-// President data
-const president: Person = {
-  name: "G.A.Y.Savinda",
-  post: "President",
+const Lisionsofficer: Person = {
+  name: "Mahanama sir",
+  post: "Lisionsofficer",
   image: "https://via.placeholder.com/150x150/87ceeb/ffffff?text=President"
 };
 
 const executiveCommittee: Person[] = [
+  {
+    name: "G.A.Y.Savinda",
+    post: "President",
+    image: "https://via.placeholder.com/150x150/87ceeb/ffffff?text=President"
+  },
   {
     name: "S.M.B.G.Janakantha",
     post: "Vice President",
@@ -107,15 +110,14 @@ const MemberCard = ({ person }: { person: Person }) => (
     flexDirection: 'column', 
     alignItems: 'center', 
     textAlign: 'center',
-    p: 2,
-    m: 1
+    m: 2, // margin for spacing
   }}>
     <Avatar
       src={person.image}
       alt={person.name}
       sx={{
-        width: 80,
-        height: 80,
+        width: 300,
+        height: 300,
         mb: 1,
         border: `3px solid ${theme.skyBlue}`
       }}
@@ -141,7 +143,7 @@ const MemberCard = ({ person }: { person: Person }) => (
 const AboutUs: React.FC = () => {
   return (
     <Box>
-      {/* About Us Section */}
+      {/* About Us IESL Section */}
       <Box sx={{ backgroundColor: theme.white, py: 6 }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
@@ -176,7 +178,7 @@ const AboutUs: React.FC = () => {
             
             <Box sx={{ minWidth: 200 }}>
               <img 
-                src="/Images/IESL.png" 
+                src="/logo.svg" 
                 alt="IESL Logo" 
                 style={{ 
                   width: '100%', 
@@ -188,7 +190,7 @@ const AboutUs: React.FC = () => {
           </Box>
         </Container>
       </Box>
-
+    
       {/* Meet Our Team Section */}
       <Box sx={{ backgroundColor: theme.lightBlue, py: 6 }}>
         <Container maxWidth="xl">
@@ -200,15 +202,15 @@ const AboutUs: React.FC = () => {
           }}>
             Meet Our Team
           </Typography>
-          
-          {/* President */}
+
+          {/*lisoins officer*/}
           <Box sx={{ textAlign: 'center', mb: 4 }}>
             <Avatar
-              src={president.image}
-              alt={president.name}
+              src={Lisionsofficer.image}
+              alt={Lisionsofficer.name}
               sx={{
-                width: 120,
-                height: 120,
+                width: 300,
+                height: 300,
                 mx: 'auto',
                 mb: 2,
                 border: `4px solid ${theme.skyBlue}`
@@ -219,10 +221,10 @@ const AboutUs: React.FC = () => {
               color: theme.darkBlue,
               mb: 0.5
             }}>
-              {president.name}
+              {Lisionsofficer.name}
             </Typography>
             <Typography variant="body2" sx={{ color: '#666' }}>
-              {president.post}
+              {Lisionsofficer.post}
             </Typography>
           </Box>
 
@@ -240,13 +242,39 @@ const AboutUs: React.FC = () => {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            maxWidth: '1000px',
-            mx: 'auto'
+            gap: 3, // spacing between cards
+            mx: 'auto',
+            maxWidth: '1200px'
           }}>
             {executiveCommittee.map((person, index) => (
               <MemberCard key={index} person={person} />
             ))}
           </Box>
+
+
+          {/* Committee Members */}
+          <Typography variant="h5" sx={{
+            textAlign: 'center',
+            color: theme.darkBlue,
+            fontWeight: 600,
+            mb: 3
+          }}>
+            Committee Members
+          </Typography>
+          
+          <Box sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 5, // spacing between cards
+            mx: 'auto',
+            maxWidth: '1200px'
+          }}>
+            {executiveCommittee.map((person, index) => (
+              <MemberCard key={index} person={person} />
+            ))}
+          </Box>
+
         </Container>
       </Box>
     </Box>

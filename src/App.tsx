@@ -7,7 +7,7 @@ import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
 import AppBar1 from "./components/Appbar1";
 import FooterSection from "./components/Footer"; 
-import Projects from "./pages/Projects"; 
+import Registrations from "./pages/Registrations";
 
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/registrations" element={<Registrations />} />
           <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/projects" element={<Projects />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
         <FooterSection />
