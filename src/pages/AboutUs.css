@@ -1,0 +1,27 @@
+.about-us-heading {
+  text-align: center;
+  margin-top: 2rem;
+}
+.about-us-description {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+.section-heading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.card-group {
+  margin-bottom: 3rem;
+}
+.member-card {
+  margin-bottom: 2rem;
+}
+.social-links {
+  margin-top: 10px;
+}
+.social-links a {
+  color: #0072b1;
+}
