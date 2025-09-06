@@ -25,3 +25,11 @@ dist-ssr
 
 # env
 .env
+
+#images
+*.png
+*.jpg
+
+#video
+*.mp4
+*.mov
